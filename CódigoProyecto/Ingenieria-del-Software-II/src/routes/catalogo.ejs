@@ -1,0 +1,120 @@
+<%- include('partials/_header') %>
+
+<pre>
+    <% catalogo %>
+</pre>
+
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 30px">
+    <div class="col-9" style="background-color: white; border-radius: 30px; padding-bottom: 30px; padding: 40px">
+        <span style="font-size: 35pt; font-family: 'Montserrat', sans-serif; font-weight: bold">Catalogo</span>
+        <div class="col">
+            <div class="row" style="display: flex; justify-content: center; align-items: center;"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large">Filtrar por:</span></div>
+            <br>
+            <form>
+                <div class="dropdown" style="font-family: 'Montserrat', sans-serif; font-weight: bold; display: flex; justify-content: center; align-items: center;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFranquicia" data-toggle="dropdown">
+                        Franquicia
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownFranquicia">
+                        <% var contador1 = 0 %>
+                        <% for(var i = 0; i < catalogo.length; i++) { %>
+                        <% var franquicias1 = []%>
+                            <% if (!franquicias1.includes(catalogo[i].extras.disponibilidad)) { %>
+                                <a class="dropdown-item" href="<%= contador1 %>"><%= catalogo[i].extras.disponibilidad %></a>
+                                <% franquicias1.push(catalogo[i].extras.disponibilidad)%>
+                                <% contador1++%>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-family: 'Montserrat', sans-serif; font-weight: bold; display: flex; justify-content: center; align-items: center; padding-top: 10px">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMarca" data-toggle="dropdown">
+                        Marca
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMarca">
+                        <% var contador2 = 0 %>
+                        <% for(var i = 0; i < catalogo.length; i++) { %>
+                            <% var franquicias2 = [] %>
+                            <% if (!franquicias2.includes(catalogo[i].marca)) { %>
+                                <a class="dropdown-item" href="<%= contador2 %>"><%= catalogo[i].marca %></a>
+                                <% franquicias2.push(catalogo[i].marca) %>
+                                <% contador2++ %>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-family: 'Montserrat', sans-serif; font-weight: bold; display: flex; justify-content: center; align-items: center; padding-top: 10px">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownGama" data-toggle="dropdown">
+                        Gama
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownGama">
+                        <% var contador3 = 0 %>
+                        <% for(var i = 0; i < catalogo.length; i++) { %>
+                            <% var franquicias3 = [] %>
+                            <% if (!franquicias3.includes(catalogo[i].gama)) { %>
+                                <a class="dropdown-item" href="<%= contador3 %>"><%= catalogo[i].gama %></a>
+                                <% franquicias3.push(catalogo[i].gama) %>
+                                <% contador3++ %>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-family: 'Montserrat', sans-serif; font-weight: bold; display: flex; justify-content: center; align-items: center; padding-top: 10px">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPuertas" data-toggle="dropdown">
+                        Nº Puertas
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownPuertas">
+                        <% var contador4 = 0 %>
+                        <% for(var i = 0; i < catalogo.length; i++) { %>
+                            <% var franquicias4 = [] %>
+                            <% if (!franquicias4.includes(catalogo[i].puertas)) { %>
+                                <a class="dropdown-item" href="<%= contador4 %>"><%= catalogo[i].puertas %></a>
+                                <% franquicias4.push(catalogo[i].puertas) %>
+                                <% contador4++ %>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-family: 'Montserrat', sans-serif; font-weight: bold; display: flex; justify-content: center; align-items: center; padding-top: 10px">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCambio" data-toggle="dropdown">
+                        Tipo cambio
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownCambio">
+                        <% var contador5 = 0 %>
+                        <% for(var i = 0; i < catalogo.length; i++) { %>
+                            <% var franquicias5 = [] %>
+                            <% if (!franquicias5.includes(catalogo[i].cambio)) { %>
+                                <a class="dropdown-item" href="<%= contador5 %>"><%= catalogo[i].cambio %></a>
+                                <% franquicias5.push(catalogo[i].cambio) %>
+                                <% contador5++ %>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary btn-block shadow" style="border-radius: 30px;">
+                    <span style="font-size: 18pt; font-weight: bold">Filtrar</span>
+                </button>
+            </form>
+        </div>
+        <div class="col" style="overflow-y: auto">
+            <table class="table table-hover" style="margin-top: 50px; border-collapse: collapse; width: 100%;">
+                <thead style="position: sticky; top: 0">
+                <tr>
+                    <th style="position: sticky; top: 0">Fotografia</th>
+                    <th style="position: sticky; top: 0">Especificaciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(var i = 0; i < catalogo.length; i++) { %>
+                    <tr>
+                        <td><img src="<%= catalogo[i].foto %>"/></td>
+                        <td><%= catalogo[i].modelo %><br><%= "Gama " + catalogo[i].gama %><br><%= catalogo[i].puertas + " puertas" %><br><%= catalogo[i].cambio%><br><br><a href="/informacion_coche" class="btn btn-primary">Detalles</a></td>
+                    </tr>
+                <%} %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('partials/_footer') %>

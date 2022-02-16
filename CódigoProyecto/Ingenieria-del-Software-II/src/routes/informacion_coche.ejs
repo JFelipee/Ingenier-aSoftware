@@ -1,0 +1,101 @@
+<%- include('partials/_header') %>
+
+<pre>
+    <% vehiculo %>
+</pre>
+
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px">
+    <div class="col-11" style="background-color: white; border-radius: 30px; padding-bottom: 30px; padding: 40px;  overflow-y: auto;">
+        <div class="row">
+            <div class="col-6" style="display: flex; justify-content: center; align-items: center;"><img src="<%= vehiculo[0].foto %>"></div>
+            <div class="col-4"><span style="display: flex; justify-content: center; align-items: center; font-family: 'Montserrat', sans-serif; font-size: 40pt; font-weight: bolder"><%= vehiculo[0].modelo %></span></div>
+        </div>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold"><%= vehiculo[0].puertas %> puertas</div>
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold"><%= vehiculo[0].extras.plazas %> plazas</div>
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Maletero: <%= vehiculo[0].extras.maletero %>L</div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold"><%= vehiculo[0].cambio %></div>
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold"><%= vehiculo[0].extras.aire_acondicionado %></div>
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Disponible: <%= vehiculo[0].extras.cv %></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large; color: mediumseagreen;">Disponibilidad inmediata en:</span></div>
+                <!-- -->
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 15px">- <%= vehiculo[0].extras.disponibilidad %></span></div>
+                <!-- -->
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-9">
+                <span class="row" style="font-family: 'Montserrat', sans-serif; font-weight: bolder">Complementos extras:</span>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 50px">
+                        <input type="checkbox" class="form-check-input" id="gps">
+                        <label class="form-check-label" for="gps" style="color: darkgray; margin-left: 15px">GPS (+1,50€)</label>
+                    </div>
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 50px">
+                        <input type="checkbox" class="form-check-input" id="asiento">
+                        <label class="form-check-label" for="asiento" style="color: darkgray; margin-left: 15px">Asiento elevador para niños (+5,50€)</label>
+                    </div>
+                    <div class="col-3" style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 50px">
+                        <input type="checkbox" class="form-check-input" id="silla">
+                        <label class="form-check-label" for="silla" style="color: darkgray; margin-left: 15px">Silla de niños (+4,50€)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large; color: mediumseagreen;">Cancelacion gratuita*</span></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px">
+            <span class="row" style="font-family: 'Montserrat', sans-serif; font-weight: bolder; margin-left: 1px">Fecha:</span>
+            <div class="row" style="margin-top: 40px">
+                <div class="input-group date" style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 25px">
+                    <input type="text" class="form-control" placeholder="Fecha de Recogida">
+                    <span class="input-group-addon" style="display: flex; justify-content: center; align-items: center; margin-left: 10px">
+                        <button><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                    </span>
+                </div>
+                <div class="input-group date" style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 25px; margin-top: 25px">
+                    <input type="text" class="form-control" placeholder="Fecha de Devolucion">
+                    <span class="input-group-addon" style="display: flex; justify-content: center; align-items: center; margin-left: 10px">
+                        <button><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                    </span>
+                </div>
+                <div class="dropdown" style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 25px; margin-top: 25px">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                        Tarifa
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Tarifa 1</a>
+                        <a class="dropdown-item" href="#">Tarifa 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px">
+            <span class="row" style="font-family: 'Montserrat', sans-serif; font-weight: bolder; margin-left: 1px">Formas de pago disponibles:</span>
+            <div class="row" style="margin-top: 40px; margin-left: -150px">
+                <div class="col">
+                    <input type="checkbox" class="form-check-input" id="efectivo">
+                    <label class="form-check-label" for="efectivo" style="margin-left: 15px; font-size: large">Efectivo</label>
+                </div>
+                <div class="col" style="margin-left: 50px">
+                    <input type="checkbox" class="form-check-input" id="tarjeta">
+                    <label class="form-check-label" for="tarjeta" style="margin-left: 15px; font-size: large">Tarjeta [Visa, MasterCard]</label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-6" style="color: darkgray; font-size: x-small; margin-top: 30px">*La cancelacion gratuita sera posible siempre y cuando se haya cancelado una reserva con 10 dias de antelacion de su fecha de recogida</div>
+            <div class="col-3"></div>
+            <button class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; font-size: x-large; padding: 10px">Reservar</button>
+        </div>
+    </div>
+</div>
+<%- include('partials/_footer') %>

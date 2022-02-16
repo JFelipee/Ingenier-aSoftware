@@ -1,0 +1,29 @@
+<%- include('partials/_header') %>
+
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 100px">
+    <div class="col-4" style="background-color: white; border-radius: 30px; padding-bottom: 30px; padding: 40px">
+        <span style="font-size: 35pt; font-family: 'Montserrat', sans-serif; font-weight: bold">Iniciar sesion</span>
+        <form action="/logear" method="POST" style="margin-top: 40px">
+            <div class="form-group">
+                <label for="correo_electronico" class="control-label"><span style="font-size: 16pt; font-weight: bold">Correo electronico</span></label>
+                <input type="text" name="correo_electronico" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="contraseña" class="control-label"><span style="font-size: 16pt; font-weight: bold">Contraseña</span></label>
+                <input type="text" name="contraseña" class="form-control">
+            </div>
+            <div class="form-check" style="margin-top: 30px; margin-bottom: 40px">
+                <input type="checkbox" class="form-check-input" name="recuerdame">
+                <label class="form-check-label" for="recuerdame"><span style="font-weight: bold; padding-left: 10px;">Recuerdame</span></label>
+            </div>
+            <div class="col-12">
+                <span class="col-6"></span>
+                <button type="submit" class="col-6 btn btn-primary btn-block shadow" style="border-radius: 30px;">
+                    <span style="font-size: 18pt; font-weight: bold">Iniciar sesion</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

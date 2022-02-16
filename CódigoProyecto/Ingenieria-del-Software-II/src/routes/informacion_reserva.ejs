@@ -1,0 +1,66 @@
+<%- include('partials/_header') %>
+
+<pre>
+    <%- reservas %>
+</pre>
+
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px">
+    <div class="col-11" style="background-color: white; border-radius: 30px; padding-bottom: 30px; padding: 40px;  overflow-y: auto;">
+        <div class="row">
+            <div class="col-6" style="display: flex; justify-content: center; align-items: center;"><img src="<%= reservas[0].foto %>"></div>
+            <div class="col-4">
+                <div class="row">
+                    <span style="display: flex; justify-content: center; align-items: center; font-family: 'Montserrat', sans-serif; font-size: 40pt; font-weight: bolder">
+                    <%= reservas[0].modelo %>
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large">Gama <%= reservas[0].gama %></span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large"><%= reservas[0].puertas %> puertas</span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large">Cambio <%= reservas[0].cambio %></span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large"><%= reservas[0].extras.plazas %> plazas</span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large"><%= reservas[0].extras.aire_acondicionado %></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px" >
+            <div class="col-6" style="padding-left: 210px">
+                <div class="row">
+                    <span style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large">Detalles de la reserva:</span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Fecha de reserva:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= reservas[0].fecha_reserva%></span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Fecha de recogida:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= reservas[0].fecha_recogida%></span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Fecha de devolución:&nbsp;&nbsp;&nbsp;&nbsp;<%= reservas[0].fecha_entrega%></span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Tarifa:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= reservas[0].tarifa%></span>
+                </div>
+                <div class="row">
+                    <span class="col" style="font-family: 'Montserrat', sans-serif; font-weight: bold">Forma de pago:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= reservas[0].forma_pago%></span>
+                </div>
+            </div>
+            <div class="col-6" style="padding-left: 105px">
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large">Extras:</span></div>
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 15px"><%= reservas[0].extras.gps %></span></div>
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 15px"><%= reservas[0].extras.silla_bebes %></span></div>
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: x-large; padding-top: 10px">Recoger en:</span></div>
+                <div class="row"><span style="font-family: 'Montserrat', sans-serif; font-weight: bold; margin-left: 15px"><%= reservas[0].extras.disponibilidad %></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

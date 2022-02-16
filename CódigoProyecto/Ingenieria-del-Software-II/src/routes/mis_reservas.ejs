@@ -1,0 +1,36 @@
+<%- include('partials/_header') %>
+
+<pre>
+    <%- reservas %>
+</pre>
+
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 30px">
+    <div class="col-9" style="background-color: white; border-radius: 30px; padding-bottom: 30px; padding: 40px;  overflow-y: auto;">
+        <span style="font-size: 35pt; font-family: 'Montserrat', sans-serif; font-weight: bold">Mis Reservas</span>
+        <table class="table table-hover" style="margin-top: 50px; border-collapse: collapse; width: 100%;">
+            <thead style="position: sticky; top: 0">
+                <tr>
+                    <th style="position: sticky; top: 0">#</th>
+                    <th style="position: sticky; top: 0">Modelo</th>
+                    <th style="position: sticky; top: 0">Fecha de Entrega</th>
+                    <th style="position: sticky; top: 0">Operacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < reservas.length; i++) { %>
+                    <tr>
+                        <td><%= i + 1%></td>
+                        <td><%= reservas[i].modelo%></td>
+                        <td><%= reservas[i].fecha_entrega%></td>
+                        <td>
+                            <a href="/reservas" class="btn btn-primary">Ver</a>
+                            <!-- <a href="" class="btn btn-danger">Eliminar</a> -->
+                            <!-- <a href="" class="btn btn-info">Editar</a> -->
+                        </td>
+                    </tr>
+                <%} %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<%- include('partials/_footer') %>
